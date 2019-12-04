@@ -1,9 +1,18 @@
 import React from 'react';
 
 function ToDoList() {
-  return <div>Esto es una todo list
-    <span>Spannnn</span>
+
+  const tasks = [];
+  const title = "Esto es una todo list";
+
+  return <div>
+  <div>{title}</div>
     <button>Add To Do</button>
+    <div>
+      <ol>
+        {tasks.map(task => <li key={task}>{task}</li>)}
+      </ol>
+    </div>
     </div>
 }
 
