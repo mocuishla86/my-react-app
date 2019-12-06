@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function ToDoList() {
+   const [tasks, setTasks] = useState([]);
 
-  const tasks = [];
   const title = "Esto es una todo list";
+  const additem = function(){
+    setTasks( previousTask => [...previousTask, 'TODO' + previousTask.length]);
+  }
 
   return <div>
   <div>{title}</div>
-    <button>Add To Do</button>
+    <button onClick={additem}>Add To Do</button>
     <div>
       <ol>
         {tasks.map(task => <li key={task}>{task}</li>)}
