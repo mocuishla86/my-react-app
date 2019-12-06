@@ -16,7 +16,8 @@ describe('<ToDoList />', () => {
   it('should show a button called Add To Do', () => {
     const component = render(<ToDoList></ToDoList>);
 
-    expect(component.baseElement.textContent).toContain('Add To Do');
+    //expect(component.baseElement.textContent).toContain('Add To Do');
+    expect(component.queryByRole('button').textContent).toBe('Add To Do');
   });
 
   it('should not show any TO DO initially', () => {
